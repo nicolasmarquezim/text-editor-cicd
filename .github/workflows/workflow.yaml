@@ -1,14 +1,14 @@
-name: Continuos Integration
+name: Continuos Integration #Nome do processo, pipeline e etc 
 
-on: pull_request
+on: pull_request #Definição do Evento que irá chamar e executará uma ação. É possivel especificar as particulares que cada ação deve executar
 
-jobs:
-  continuos-integration:
-    runs-on: ubuntu-latest
+jobs: #Indicativo de inicio da ação a ser excutada
+  continuos-integration: #Definição do nome da ação
+    runs-on: ubuntu-latest #Definição da máquina que será utilizada
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Using Node.js
+    steps: #Declaração do passo a passo a ser seguido
+      - uses: actions/checkout@v3 # Clonagem do repositorio para a máquina virtual (codigos)
+      - name: Using Node.js # 
         uses: actions/setup-node@v2
         with:
           node-version: 16.
